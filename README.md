@@ -6,10 +6,10 @@
 
 ### Profile Stats
 
-| <img align="center" src="https://github-readme-stats.vercel.app/api?username=Karl-Dai&show_icons=true&theme=catppuccin_latte&hide_border=true&bg_color=ffffff" alt="Karl-Dai's Profile Stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Karl-Dai&layout=compact&theme=catppuccin_latte&hide_border=true&langs_count=6&bg_color=ffffff" alt="Karl-Dai's Top Langs" /> |
+| <img align="center" width="460" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/0-profile-details.svg" alt="Karl-Dai's Profile Stats" /> | <img align="center" width="460" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/1-repos-per-language.svg" alt="Karl-Dai's Top Langs" /> |
 | ------------- | ------------- |
 
-[![Karl-Dai's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=tokyo-night&bg_color=ffffff)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Karl-Dai's github contribution calendar](https://ghchart.rshah.org/Karl-Dai)](https://github.com/Karl-Dai)
 
 ### Skills & Tech
 

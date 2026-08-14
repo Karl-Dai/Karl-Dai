@@ -3,11 +3,6 @@
 - 🏋️ I'm a programmer who loves 撸铁 (lifting weights at the gym).
 - 📫 Email: [kelsoprotein@gmail.com](mailto:kelsoprotein@gmail.com)
 
-### Profile Stats
-
-| <img align="center" height="185" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/0-profile-details.svg" alt="Karl-Dai's Profile Stats" /> | <img align="center" height="185" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/1-repos-per-language.svg" alt="Karl-Dai's Top Langs" /> |
-| ------------- | ------------- |
-
 ### 🧰 Tech stack
 
 <p align="center">

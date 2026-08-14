@@ -1,8 +1,7 @@
 ### Hi! 👋 I'm Karl-Dai
 
 - 🏋️ I'm a programmer who loves 撸铁 (lifting weights at the gym).
-- 💻 Currently building [OPCUASim](https://github.com/Karl-Dai/OPCUASim) — an OPC UA simulator (Rust + Vue + TypeScript).
-- 💬 Feel free to reach out and connect!
+- 📫 Email: [kelsoprotein@gmail.com](mailto:kelsoprotein@gmail.com)
 
 ### Profile Stats
 

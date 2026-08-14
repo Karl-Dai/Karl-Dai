@@ -1,7 +1,7 @@
 ### Hi! 👋 I'm Karl-Dai
 
-- 🔭 Currently building [OPCUASim](https://github.com/Karl-Dai/OPCUASim) — an OPC UA simulator (Rust + Vue + TypeScript).
-- 🌱 Interests: industrial automation, OPC UA, IoT & simulation.
+- 🏋️ I'm a programmer who loves 撸铁 (lifting weights at the gym).
+- 💻 Currently building [OPCUASim](https://github.com/Karl-Dai/OPCUASim) — an OPC UA simulator (Rust + Vue + TypeScript).
 - 💬 Feel free to reach out and connect!
 
 ### Profile Stats

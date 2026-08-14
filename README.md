@@ -52,9 +52,3 @@
   </picture>
 </p>
 
-### 📅 Contribution calendar
-
-<p align="center">
-  <img src="https://ghchart.rshah.org/Karl-Dai" alt="Karl-Dai's contribution calendar"/>
-</p>
-

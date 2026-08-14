@@ -6,7 +6,7 @@
 
 ### Profile Stats
 
-| <img align="center" width="460" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/0-profile-details.svg" alt="Karl-Dai's Profile Stats" /> | <img align="center" width="460" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/1-repos-per-language.svg" alt="Karl-Dai's Top Langs" /> |
+| <img align="center" height="185" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/0-profile-details.svg" alt="Karl-Dai's Profile Stats" /> | <img align="center" height="185" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/profile-summary-card-output/default/1-repos-per-language.svg" alt="Karl-Dai's Top Langs" /> |
 | ------------- | ------------- |
 
 [![Karl-Dai's github contribution calendar](https://ghchart.rshah.org/Karl-Dai)](https://github.com/Karl-Dai)

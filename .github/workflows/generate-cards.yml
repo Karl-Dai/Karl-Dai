@@ -23,7 +23,16 @@ jobs:
           UTC_OFFSET: 8
           AUTO_PUSH: false
           THEME: "default"
+      - name: Download tech stack and activity images
+        run: |
+          mkdir -p assets
+          curl -sL --fail --max-time 90 'https://skillicons.dev/icons?i=rust,ts,js,vue,vite,docker,git,github,linux,bash' -o assets/tech-stack.svg
+          curl -sL --fail --max-time 90 'https://streak-stats.demolab.com?user=Karl-Dai&theme=default&hide_border=true&border_radius=12' -o assets/streak-light.svg
+          curl -sL --fail --max-time 90 'https://streak-stats.demolab.com?user=Karl-Dai&theme=tokyonight&hide_border=true&border_radius=12' -o assets/streak-dark.svg
+          curl -sL --fail --max-time 90 'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=github-light&hide_border=true&radius=12&area=true' -o assets/activity-graph-light.svg
+          curl -sL --fail --max-time 90 'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=tokyo-night&hide_border=true&radius=12&area=true' -o assets/activity-graph-dark.svg
+          ls -la assets
       - uses: EndBug/add-and-commit@v9
         with:
-          message: "chore: update profile summary cards"
-          add: "profile-summary-card-output/"
+          message: "chore: update profile cards and activity images"
+          add: "."

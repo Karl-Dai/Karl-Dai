@@ -23,6 +23,15 @@ jobs:
           UTC_OFFSET: 8
           AUTO_PUSH: false
           THEME: "default"
+      - name: Generate contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif?color_snake=#f97316&color_dots=#ebedf0,#9be9a8,#40c463,#30a14e,#216e39&color_background=#ffffff
+            dist/github-contribution-grid-snake-dark.gif?color_snake=#f97316&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353&color_background=#0d1117
       - name: Download tech stack and activity images
         run: |
           mkdir -p assets
@@ -31,8 +40,27 @@ jobs:
           curl -sL --fail --max-time 90 'https://streak-stats.demolab.com?user=Karl-Dai&theme=tokyonight&hide_border=true&border_radius=12' -o assets/streak-dark.svg
           curl -sL --fail --max-time 90 'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=github-light&hide_border=true&radius=12&area=true' -o assets/activity-graph-light.svg
           curl -sL --fail --max-time 90 'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=tokyo-night&hide_border=true&radius=12&area=true' -o assets/activity-graph-dark.svg
+          # Trophies: official instance is rate-limited/paused, try mirrors in order (non-fatal)
+          fetch_trophy() {
+            out="$1"; theme="$2"
+            for base in \
+              'https://github-profile-trophy.vercel.app' \
+              'https://trophy.ryglcloud.net' \
+              'https://trophygithubreadmelang.cybee.dpdns.org' \
+              'https://github-profile-trophy-liard-delta.vercel.app' \
+              'https://github-profile-trophy-winning.vercel.app' \
+              'https://github-profile-trophy-kannan.vercel.app' \
+              'https://github-profile-trophy-tawny.vercel.app'; do
+              if curl -sL --fail --max-time 60 -H 'Accept: image/svg+xml' "$base/?username=Karl-Dai&theme=$theme&column=7&margin-w=10&margin-h=10&no-frame=true" -o "$out" && grep -q '<svg' "$out"; then
+                echo "trophy ok: $base ($theme)"; return 0
+              fi
+            done
+            echo "trophy FAILED: all mirrors down ($theme)"; return 1
+          }
+          fetch_trophy assets/trophy-light.svg flat || true
+          fetch_trophy assets/trophy-dark.svg onedark || true
           ls -la assets
       - uses: EndBug/add-and-commit@v9
         with:
-          message: "chore: update profile cards and activity images"
+          message: "chore: update profile cards, snake and activity images"
           add: "."

@@ -34,6 +34,24 @@
   </picture>
 </p>
 
+### 🐍 Contribution snake
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/dist/github-contribution-grid-snake-dark.gif" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/dist/github-contribution-grid-snake.gif" />
+  </picture>
+</p>
+
+### 🏆 Trophies
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/assets/trophy-dark.svg" />
+    <img alt="trophies" src="https://raw.githubusercontent.com/Karl-Dai/Karl-Dai/main/assets/trophy-light.svg" />
+  </picture>
+</p>
+
 ### 📅 Contribution calendar
 
 <p align="center">

@@ -22,3 +22,5 @@
 🛠️ Tools:
 <img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white">
 <img alt="Docker" src="https://img.shields.io/badge/Docker-1D63ED?style=flat&logo=docker&labelColor=ffffff">
+
+<!-- v2: kick re-index -->

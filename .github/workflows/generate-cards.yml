@@ -35,11 +35,49 @@ jobs:
       - name: Download tech stack and activity images
         run: |
           mkdir -p assets
-          curl -sL --fail --max-time 90 'https://skillicons.dev/icons?i=rust,ts,js,vue,vite,docker,git,github,linux,bash' -o assets/tech-stack.svg
-          curl -sL --fail --max-time 90 'https://streak-stats.demolab.com?user=Karl-Dai&theme=default&hide_border=true&border_radius=12' -o assets/streak-light.svg
-          curl -sL --fail --max-time 90 'https://streak-stats.demolab.com?user=Karl-Dai&theme=tokyonight&hide_border=true&border_radius=12' -o assets/streak-dark.svg
-          curl -sL --fail --max-time 90 'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=github-light&hide_border=true&radius=12&area=true' -o assets/activity-graph-light.svg
-          curl -sL --fail --max-time 90 'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=tokyo-night&hide_border=true&radius=12&area=true' -o assets/activity-graph-dark.svg
+
+          # Some card services return an error message inside an SVG with HTTP 200.
+          # Validate downloads before replacing the last known-good asset.
+          fetch_svg() {
+            out="$1"
+            url="$2"
+            tmp="${out}.tmp"
+
+            for attempt in 1 2 3; do
+              rm -f "$tmp"
+              if curl -sL --fail --max-time 90 \
+                  --retry 2 --retry-all-errors --retry-delay 2 \
+                  -H 'Accept: image/svg+xml' "$url" -o "$tmp" \
+                && grep -q '<svg' "$tmp" \
+                && ! grep -Eqi 'Failed to retrieve contributions|GitHub API issue|Something went wrong|Internal Server Error|Application error' "$tmp"; then
+                mv "$tmp" "$out"
+                echo "asset ok: $out"
+                return 0
+              fi
+
+              echo "asset validation failed: $out (attempt $attempt/3)"
+              rm -f "$tmp"
+            done
+
+            if [ -s "$out" ]; then
+              echo "::warning file=$out::Keeping the last known-good asset because the upstream response was invalid."
+              return 0
+            fi
+
+            echo "::error file=$out::No valid asset is available."
+            return 1
+          }
+
+          fetch_svg assets/tech-stack.svg \
+            'https://skillicons.dev/icons?i=rust,ts,js,vue,vite,docker,git,github,linux,bash'
+          fetch_svg assets/streak-light.svg \
+            'https://streak-stats.demolab.com?user=Karl-Dai&theme=default&hide_border=true&border_radius=12'
+          fetch_svg assets/streak-dark.svg \
+            'https://streak-stats.demolab.com?user=Karl-Dai&theme=tokyonight&hide_border=true&border_radius=12'
+          fetch_svg assets/activity-graph-light.svg \
+            'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=github-light&hide_border=true&radius=12&area=true'
+          fetch_svg assets/activity-graph-dark.svg \
+            'https://github-readme-activity-graph.vercel.app/graph?username=Karl-Dai&theme=tokyo-night&hide_border=true&radius=12&area=true'
           # Trophies: official instance is rate-limited/paused, try mirrors in order (non-fatal)
           fetch_trophy() {
             out="$1"; theme="$2"

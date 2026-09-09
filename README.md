@@ -9,7 +9,7 @@
 
 ### Hi! 👋 I'm Karl-Dai
 
-- 🏋️ I'm a programmer who loves 撸铁 (lifting weights at the gym).
+- 🏋️ I'm a Noob
 - 📫 Email: [kelsoprotein@gmail.com](mailto:kelsoprotein@gmail.com)
 
 ### 🧰 Tech stack
